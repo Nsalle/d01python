@@ -16,8 +16,11 @@ class Evaluator:
         if len(coef) != len(word):
             print(-1)
             return -1
-        enum = enumerate(word, 5)
-        print(list(enum))
+        rep = 0
+        wenum = enumerate(word, 0)
+        cenum = enumerate(coef, 0)
+        for i, val in wenum:
+            rep += val * cenum[i]
         pass
 
 words = ["Le", "Lorem", "Ipsum", "est", "simple"]

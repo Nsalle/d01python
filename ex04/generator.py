@@ -1,5 +1,6 @@
 import string
 import random
+import datetime
 
 
 def error_check(text, sep, option=None):
@@ -15,13 +16,18 @@ def error_check(text, sep, option=None):
             quit()
 
 
+def randnb(max):
+    time = datetime.datetime.now()
+    rand = int(time.strftime("%f"))
+    return (rand % max)
+
+
 def shuffle(text, sep):
     txt = text.split(sep)
-    random.shuffle(txt)
-    i = 0
-    while i < len(txt):
-        yield txt[i]
-        i += 1
+    while len(txt) > 0:
+        rand = randnb(len(txt))
+        yield txt[rand]
+        txt.remove(txt[rand])
 
 
 def ordered(text, sep):
@@ -62,6 +68,6 @@ def generator(text, sep=" ", option=None):
         return noopt(text, sep)
 
 
-# test = "ctest ben dquatre amots ben ben"
-# for word in generator(test):
-#    print(word)
+# test = "ctest ben dquatre amots ben ben test"
+# for word in generator(test, " ", "shuffle"):
+#   print(word)

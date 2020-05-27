@@ -1,0 +1,16 @@
+from vector import Vector
+
+vectest = Vector((3, 6))
+vec2 = Vector((3))
+print("VECTEST\t", vectest.values)
+print("VEC2\t", vec2.values)
+print(vectest + vec2, "    vestest + vec2")
+print(vectest + 10, " vectest + 10")
+print(10 + vectest, " 10 + vectest")
+print(vectest - 10, " vectest - 10")
+print(10 - vectest, "    10 - vectest")
+print(vectest / 0, "    vectest / 2")
+print(2 / vectest, "    2 / vectest")
+print(2 * vectest, "    2 * vectest")
+print(vectest * 2, "    vectest * 2")
+print(str(vec2))

@@ -57,15 +57,18 @@ def noopt(text, sep):
 
 
 def generator(text, sep=" ", option=None):
-    error_check(text, sep, option)
-    if option == "shuffle":
-        return shuffle(text, sep)
-    elif option == "ordered":
-        return ordered(text, sep)
-    elif option == "unique":
-        return unique(text, sep)
-    else:
-        return noopt(text, sep)
+    try:
+        error_check(text, sep, option)
+        if option == "shuffle":
+            return shuffle(text, sep)
+        elif option == "ordered":
+            return ordered(text, sep)
+        elif option == "unique":
+            return unique(text, sep)
+        else:
+            return noopt(text, sep)
+    except ValueError:
+        "separator is mandatory and cannot be NULL"
 
 
 # test = "ctest ben dquatre amots ben ben test"
